@@ -1,5 +1,25 @@
 #!/bin/bash
 
+unzip_exists() {
+  [ `type -t unzip`"" == 'function' ]
+}
+
 URL="https://data.gov.uk/dataset/land-registry-monthly-price-paid-data/datapackage.zip"
-echo "Starting to download data from $URL"
-wget "-v -D ${pwd}/data/ ${URL}"
+DATA_FILENAME="./data/data.zip"
+echo "👽 Starting to download data from $URL"
+wget "--verbose" "-D" "${pwd}/data/" "${URL}"
+mv "./datapackage.zip" "${DATA_FILENAME}"
+
+if ! [ unzip_exists ]
+  then
+    echo "Hey, you need to install 'unzip' for this script."
+    echo "🍻  You can get it from https://oss.oracle.com/el4/unzip/unzip.html"
+    exit 1
+else
+  echo "👽  Install finished! "
+  echo "👽  Now we are going to unzip the data"
+  unzip $DATA_FILENAME
+  echo "👽  Successfully decompressed all the files!"
+  rm "-rf" $DATA_FILENAME
+  exit 0
+fi
