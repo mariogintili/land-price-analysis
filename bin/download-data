@@ -1,0 +1,5 @@
+#!/bin/bash
+
+URL="https://data.gov.uk/dataset/land-registry-monthly-price-paid-data/datapackage.zip"
+echo "Starting to download data from $URL"
+wget "-v -D ${pwd}/data/ ${URL}"
