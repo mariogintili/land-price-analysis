@@ -1,14 +1,16 @@
-# land-price-analysis
+# Land price analysis in the UK :guardsman: :guardsman:
 
-A Clojure library designed to ... well, that part is up to you.
+This repository compromises a small analysis to all declared land prices from 1996 to 2016. This data has
+been kindly offered by the [UK Government](https://data.gov.uk/faq#q1)
 
 ## Usage
 
-FIXME
+To be completed soon :godmode:
 
 ## License
 
-Copyright © 2016 FIXME
+Distributed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+## Contributions
+
+Feel free to open a PR/issue highlighting your concerns

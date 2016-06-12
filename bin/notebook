@@ -1,0 +1,27 @@
+#!/bin/bash
+
+jupyter_exists() {
+  [ `type -t jupyter`"" == 'function' ]
+}
+
+lein_exists() {
+  [ `type -t lein`"" == 'function' ]
+}
+
+echo "👽  Spinning off the notebook"
+
+if ! [ jupyter_exists ]
+  then
+    echo "Hey, you need to install the Jupyter Notebook to run this script."
+    echo "🍻  Download it at from http://jupyter.readthedocs.io/en/latest/install.html"
+    echo "and run this again"
+    exit 1
+fi
+
+if ! [ lein_exists ]
+  then
+    echo "Hey, you need to install the Leiningen to run this script."
+    echo "🍻  $ brew install leiningen"
+    echo "and run this again"
+    exit 1
+fi
